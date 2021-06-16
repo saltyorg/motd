@@ -31,7 +31,7 @@ file_handler.setFormatter(log_formatter)
 root_logger.addHandler(file_handler)
 root_logger.setLevel(logging.DEBUG)
 
-log = root_logger.getChild("cloudbox-motd")
+log = root_logger.getChild("saltbox-motd")
 
 ############################################################
 # MAIN
@@ -117,15 +117,15 @@ if __name__ == "__main__":
                                          verifying_count))
             exit(0)
 
-    elif cmd_type == 'plexpy':
-        plexpy = utils.Plexpy(cfg.plexpy.url, cfg.plexpy.api_key)
+    elif cmd_type == 'tautulli':
+        tautulli = utils.Tautulli(cfg.tautulli.url, cfg.tautulli.api_key)
 
         # Process funcs
         if cmd_func == "get_stream_bandwidth":
-            print(plexpy.get_stream_bandwidth())
+            print(tautulli.get_stream_bandwidth())
             exit(0)
         elif cmd_func == "get_stream_counts":
-            transcodes, direct_play, direct_streams = plexpy.get_stream_counts()
+            transcodes, direct_play, direct_streams = tautulli.get_stream_counts()
             print("%d.%d.%d" % (transcodes, direct_play, direct_streams))
             exit(0)
 

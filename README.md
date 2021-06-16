@@ -1,8 +1,6 @@
-# Cloudbox MOTD
-Dynamic motd for Cloudbox
+# Saltbox MOTD
+Dynamic motd for Saltbox
 
 # Info
 
-Based on and inspired by https://github.com/ryanleonard1/PlexMOTD
-
-Further enhanced by l3uddz for integration with Cloudbox
+Based on https://github.com/Cloudbox/Cloudbox-MOTD

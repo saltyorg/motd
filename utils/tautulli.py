@@ -3,7 +3,7 @@ import requests
 from . import misc
 
 
-class Plexpy:
+class Tautulli:
     def __init__(self, url, api_key):
         self.url = url
         self.api_key = api_key

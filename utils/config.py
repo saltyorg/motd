@@ -44,19 +44,19 @@ class Config(object, metaclass=Singleton):
         'nzbget': {
             'url': 'https://user:password@rutorrent.domain.com'
         },
-        'plexpy': {
-            'url': 'https://plexpy.domain.com',
+        'tautulli': {
+            'url': 'https://tautulli.domain.com',
             'api_key': 'YOUR_API_KEY'
         },
         'motd': {
-            'banner_title': 'Cloudbox',
+            'banner_title': 'Saltbox',
             'banner_type': 'peek',
             'banner_font': 'ivrit',
             'text_color': 'LGRN',
             'title_color': 'LBLU',
             'show': {
                 'autoscan': False,
-                'plexpy': False,
+                'tautulli': False,
                 'rtorrent': False,
                 'nzbget': False
             }
