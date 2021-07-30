@@ -5,7 +5,7 @@ if [ "$(cat /opt/motd/config.json | jq '.motd.show.plexpy' --raw-output)" == "fa
 
 source /etc/update-motd.d/colors.txt
 
-data=$(python3 /opt/motd/cloudbox-motd.py plexpy get_stream_counts)
+data=$(python3 /opt/motd/saltbox-motd.py plexpy get_stream_counts)
 
 if [[ $data == ERROR* ]]
 then
@@ -20,5 +20,5 @@ else
 fi
 
 echo -e " ${TITLE_COLOR}Plex Streams........:${NC} Transcodes: ${TEXT_COLOR}${plex_transcodes}${NC} | Direct Plays: ${TEXT_COLOR}${plex_direct_plays}${NC} | Direct Streams: ${TEXT_COLOR}${plex_direct_streams}${NC}"
-echo -e " ${TITLE_COLOR}Plex Tx.............:${NC} Up: ${TEXT_COLOR}$(python3 /opt/motd/cloudbox-motd.py plexpy get_stream_bandwidth)${NC}"
+echo -e " ${TITLE_COLOR}Plex Tx.............:${NC} Up: ${TEXT_COLOR}$(python3 /opt/motd/saltbox-motd.py plexpy get_stream_bandwidth)${NC}"
 

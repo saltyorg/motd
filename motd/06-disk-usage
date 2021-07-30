@@ -2,7 +2,7 @@
 
 source /etc/update-motd.d/colors.txt
 
-data=$(python3 /opt/motd/cloudbox-motd.py disk usage /)
+data=$(python3 /opt/motd/saltbox-motd.py disk usage /)
 if [[ $data == ERROR* ]]
 then
     root_total=(0 MB)
