@@ -71,12 +71,8 @@ if __name__ == "__main__":
 
         # Process funcs
         if cmd_func == 'usage':
-            if len(sys.argv) < 4:
-                total_space, used_space, used_percent, free_space = utils.disk.get_disk_usage("/")
-                print("%s|%s|%s|%s" % (total_space, used_space, used_percent, free_space))
-            else:
-                total_space, used_space, used_percent, free_space = utils.disk.get_disk_usage(sys.argv[3])
-                print("%s|%s|%s|%s" % (total_space, used_space, used_percent, free_space))
+            total_space, used_space, used_percent, free_space = utils.disk.get_disk_usage(cfg.disk.path)
+            print("%s|%s|%s|%s" % (total_space, used_space, used_percent, free_space))
             exit(0)
 
     elif cmd_type == 'rtorrent':
