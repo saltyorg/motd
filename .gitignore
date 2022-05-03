@@ -1,5 +1,6 @@
 # User-specific stuff:
 .idea/*
+motd_venv/*
 
 ## File-based project format:
 *.iws

@@ -60,7 +60,7 @@ if __name__ == "__main__":
             exit(0)
 
     elif cmd_type == 'autoscan':
-        autoscan = utils.Autoscan(cfg.autoscan.url, cfg.autoscan.api_key)
+        autoscan = utils.Autoscan(cfg["autoscan"]["url"], cfg["autoscan"]["api_key"])
 
         # Process funcs
         if cmd_func == 'get_queue_count':
@@ -76,7 +76,7 @@ if __name__ == "__main__":
             exit(0)
 
     elif cmd_type == 'rtorrent':
-        rtorrent = utils.Rtorrent(cfg.rtorrent.url)
+        rtorrent = utils.Rtorrent(cfg["rtorrent"]["url"])
 
         # Process funcs
         if cmd_func == 'get_download_total':
@@ -97,7 +97,7 @@ if __name__ == "__main__":
             exit(0)
 
     elif cmd_type == 'nzbget':
-        nzbget = utils.Nzbget(cfg.nzbget.url)
+        nzbget = utils.Nzbget(cfg["nzbget"]["url"])
 
         # Process funcs
         if cmd_func == "get_download_total":
@@ -114,7 +114,7 @@ if __name__ == "__main__":
             exit(0)
 
     elif cmd_type == 'tautulli':
-        tautulli = utils.Tautulli(cfg.tautulli.url, cfg.tautulli.api_key)
+        tautulli = utils.Tautulli(cfg["tautulli"]["url"], cfg["tautulli"]["api_key"])
 
         # Process funcs
         if cmd_func == "get_stream_bandwidth":
