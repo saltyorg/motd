@@ -2,7 +2,7 @@ import json
 import os
 import sys
 
-from attrdict import AttrDict
+# from attrdict import AttrDict
 
 
 class Singleton(type):
@@ -13,24 +13,6 @@ class Singleton(type):
             cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
 
         return cls._instances[cls]
-
-
-class AttrConfig(AttrDict):
-    """
-    Simple AttrDict subclass to return None when requested attribute does not exist
-    """
-
-    def __init__(self, config):
-        super().__init__(config)
-
-    def __getattr__(self, item):
-        try:
-            return super().__getattr__(item)
-        except AttributeError:
-            pass
-        # Default behaviour
-        return None
-
 
 class Config(object, metaclass=Singleton):
     base_config = {
@@ -110,7 +92,7 @@ class Config(object, metaclass=Singleton):
 
     def load_config(self):
         with open(self.config_path, 'r') as fp:
-            return AttrConfig(json.load(fp))
+            return json.load(fp)
 
     def upgrade_settings(self, currents):
         upgraded = False
@@ -144,4 +126,4 @@ class Config(object, metaclass=Singleton):
             return merged, sub_upgraded
 
         upgraded_settings, upgraded = inner_upgrade(self.base_config, currents)
-        return AttrConfig(upgraded_settings), upgraded
+        return upgraded_settings, upgraded
