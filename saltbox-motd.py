@@ -71,7 +71,7 @@ if __name__ == "__main__":
 
         # Process funcs
         if cmd_func == 'usage':
-            total_space, used_space, used_percent, free_space = utils.disk.get_disk_usage(cfg.disk.path)
+            total_space, used_space, used_percent, free_space = utils.disk.get_disk_usage(cfg["disk"]["path"])
             print("%s|%s|%s|%s" % (total_space, used_space, used_percent, free_space))
             exit(0)
 
