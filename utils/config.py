@@ -2,9 +2,6 @@ import json
 import os
 import sys
 
-# from attrdict import AttrDict
-
-
 class Singleton(type):
     _instances = {}
 
