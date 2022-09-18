@@ -2,4 +2,4 @@
 
 source /etc/update-motd.d/colors.txt
 
-echo -e " ${TITLE_COLOR}User Sessions.......:${NC} ${TEXT_COLOR}$(who | wc -l)${NC} other sessions active."
+echo -e " ${TITLE_COLOR}User Sessions.......:${NC} ${TEXT_COLOR}$(who | wc -l)${NC} other sessions active"
