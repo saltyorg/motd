@@ -5,5 +5,5 @@ if [ "$(cat /opt/motd/config.json | jq '.motd.show.autoscan' --raw-output)" == "
 
 source /etc/update-motd.d/colors.txt
 
-echo -e " ${TITLE_COLOR}Plex Autoscan.......:${NC} Queued Scans: ${TEXT_COLOR}$(python3 /opt/motd/saltbox-motd.py autoscan get_queue_count)${NC}"
+echo -e " ${TITLE_COLOR}Plex Autoscan.......:${NC} Queued Scans: ${TEXT_COLOR}$(/srv/ansible/venv/bin/python3 /opt/motd/saltbox-motd.py autoscan get_queue_count)${NC}"
 

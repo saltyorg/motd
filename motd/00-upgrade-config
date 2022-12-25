@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # run saltbox-motd to ensure config is latest
-meh=$(python3 /opt/motd/saltbox-motd.py config upgrade)
+meh=$(/srv/ansible/venv/bin/python3 /opt/motd/saltbox-motd.py config upgrade)
